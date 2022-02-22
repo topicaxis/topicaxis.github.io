@@ -11,6 +11,7 @@ import { ArticleService } from '../article.service'
 export class ArticlesComponent implements OnInit {
 
   articles: Article[] = [];
+  nextPage?: string;
 
   constructor(private articleService: ArticleService) { }
 
@@ -19,7 +20,12 @@ export class ArticlesComponent implements OnInit {
   }
 
   getArticles(): void {
-    this.articleService.getArticles().subscribe(articles => this.articles = articles);
+    this.articleService.getArticles(this.nextPage).subscribe(
+      articles => {
+        this.articles = this.articles.concat(articles.articles);
+        this.nextPage = articles.next_page;
+      }
+    );
   }
 
 }

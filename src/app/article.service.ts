@@ -1,41 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
-import { Article } from './models/article'
+import { Articles } from './models/articles'
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticleService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getArticles(): Observable<Article[]> {
-    return of(
-      [
-        {
-          id: "id-1",
-          title: "article title",
-          url: "https://www.example.com/page-1",
-          created_at: 12345678,
-          source: {
-            source: "example.com",
-            url: "https://www.example.com"
-          },
-          categories: [
-            {
-              id: "category-1",
-              category: "category name"
-            }
-          ],
-          tags: [
-            {
-              id: "tag-1",
-              name: "tag name"
-            }
-          ]
-        }
-      ]
-    );
+  getArticles(page?: string): Observable<Articles> {
+    var args = {};
+    if (page) {
+      args["params"] = {
+        page: page
+      };
+    }
+
+    return this.http.get<Articles>("https://api.topicaxis.com/v1/articles", args);
   }
+
 }
