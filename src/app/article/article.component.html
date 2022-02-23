@@ -1,3 +1,17 @@
-<div *ngIf="article">
-  <h3>{{ article.title }}</h3>
+<div *ngIf="article" class="article">
+  <div class="article-title">
+    <a class="article-link" href="{{ article.url }}">{{ article.title }}</a>
+    <span class="article-source-link-container">
+      <a class="article-source-link" href="{{ article.source.url }}">({{ article.source.source }})</a>
+    </span>
+    <div class="category-container">
+      <span class="category" *ngFor="let category of article.categories">{{ category.category }}</span>
+    </div>
+    <div *ngIf="article.tags" class="tag-container">
+      <span class="tag" *ngFor="let tag of article.tags">{{ tag.name }}</span>
+    </div>
+  </div>
+  <div>
+    <span>Posted on {{ article.created_at*1000 | date:'EEEE, MMMM d, yyyy' }} at {{ article.created_at*1000 | date:'HH:mm' }}</span>
+  </div>
 </div>
