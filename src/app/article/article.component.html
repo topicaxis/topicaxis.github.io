@@ -4,12 +4,12 @@
     <span class="article-source-link-container">
       <a class="article-source-link" href="{{ article.source.url }}">({{ article.source.source }})</a>
     </span>
-    <div class="category-container">
-      <span class="category" *ngFor="let category of article.categories">{{ category.category }}</span>
-    </div>
-    <div *ngIf="article.tags" class="tag-container">
-      <span class="tag" *ngFor="let tag of article.tags">{{ tag.name }}</span>
-    </div>
+    <mat-chip-list aria-label="Fish selection">
+      <mat-chip color="primary" selected *ngFor="let category of article.categories">{{ category.category }}</mat-chip>
+    </mat-chip-list>
+    <mat-chip-list *ngIf="article.tags">
+      <mat-chip color="accent" selected *ngFor="let tag of article.tags">{{ tag.name }}</mat-chip>
+    </mat-chip-list>
   </div>
   <div>
     <span>Posted on {{ article.created_at*1000 | date:'EEEE, MMMM d, yyyy' }} at {{ article.created_at*1000 | date:'HH:mm' }}</span>

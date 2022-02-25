@@ -1,18 +1,19 @@
 .article {
-    padding: 0.5em 0em 0.5em 0em;
-    margin: 0;
+    padding: 0em 0em 0em 0em;
+    margin: 0em 0em 1.5em 0em;
 }
 
 .article-title {
-    box-sizing: border-box;
-    height: 100%;
-    margin: 0em 0em 0.2em 0em;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0em 0em 0em 0em;
 }
 
 .article a {
     color: black;
     text-decoration: none;
     font-weight: bolder;
+    align-self: center;
 }
 
 .article a:visited {
@@ -22,39 +23,12 @@
 }
 
 .article-source-link-container {
-    margin-left: 0.5em;
+    margin: 0em 0.5em 0em 0.5em;
+    align-self: center;
 }
 
 .article-source-link-container a{
     font-weight: normal;
     font-style: italic;
     font-size: 0.8em;
-}
-
-.category-container {
-    display: inline;
-    padding: 0em;
-    margin: 0em 0em 0em 0.5em;
-}
-
-.category {
-    color: white;
-    background-color: blue;
-    padding: 0.2em;
-    font-weight: bold;
-    margin-right: 0.3em;
-}
-
-.tag-container {
-    display: inline;
-    padding: 0em;
-    margin: 0em 0em 0em 0.5em;
-}
-
-.tag {
-    color: white;
-    background-color: red;
-    padding: 0.2em;
-    font-weight: bold;
-    margin-right: 0.3em;
 }
