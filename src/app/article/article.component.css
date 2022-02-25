@@ -32,3 +32,8 @@
     font-style: italic;
     font-size: 0.8em;
 }
+
+.spacer {
+    margin: 0em 0.5em 0em 0em;
+    padding: 0em;
+}
