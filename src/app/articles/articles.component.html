@@ -1,7 +1,12 @@
 <div class="articles">
-    <div *ngFor="let article of articles">
-        <app-article [article]="article"></app-article>
-    </div>
+    <ng-template [ngIf]="articles?.length > 0" [ngIfElse]="loading">
+        <div *ngFor="let article of articles">
+            <app-article [article]="article"></app-article>
+        </div>
 
-    <button *ngIf="nextPage" (click)="getArticles()" mat-raised-button>Next</button>
+        <button *ngIf="nextPage" (click)="getArticles()" mat-raised-button>Next</button>
+    </ng-template>
+    <ng-template #loading>
+        <mat-spinner></mat-spinner>
+    </ng-template>
 </div>
