@@ -4,7 +4,9 @@
             <app-article [article]="article"></app-article>
         </div>
 
-        <button *ngIf="nextPage" (click)="getArticles()" mat-raised-button>Next</button>
+        <div style="overflow-anchor: none;">
+            <button *ngIf="nextPage" (click)="getArticles()" mat-raised-button>Next</button>
+        </div>
     </ng-template>
     <ng-template #loading>
         <mat-spinner></mat-spinner>
