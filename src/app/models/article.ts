@@ -5,13 +5,13 @@
       "title": "Cyclomatic complexity - a fresh look at code complexity｜Blog",
       "created_at": 1645549438,
       "source": {
-        "source": "codescene.com",
+        "name": "codescene.com",
         "url": "https://codescene.com"
       },
       "categories": [
         {
           "id": "YdV8vwGmKabzJbM2L5ZRyOnl",
-          "category": "programming"
+          "name": "programming"
         }
       ],
       "tags": [

@@ -1,4 +1,4 @@
 export interface Source {
-    source: string;
+    name: string;
     url: string;
 }

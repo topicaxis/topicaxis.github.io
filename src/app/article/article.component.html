@@ -2,10 +2,10 @@
   <div class="article-title">
     <a class="article-link" href="{{ article.url }}" target="_blank">{{ article.title }}</a>
     <span class="article-source-link-container">
-      <a class="article-source-link" href="{{ article.source.url }}" target="_blank">({{ article.source.source }})</a>
+      <a class="article-source-link" href="{{ article.source.url }}" target="_blank">({{ article.source.name }})</a>
     </span>
     <mat-chip-list aria-label="Fish selection">
-      <mat-chip color="primary" selected *ngFor="let category of article.categories">{{ category.category }}</mat-chip>
+      <mat-chip color="primary" selected *ngFor="let category of article.categories">{{ category.name }}</mat-chip>
     </mat-chip-list>
     <span class="spacer"></span>
     <mat-chip-list *ngIf="article.tags">
