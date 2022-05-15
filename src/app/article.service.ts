@@ -11,11 +11,11 @@ export class ArticleService {
 
   constructor(private http: HttpClient) { }
 
-  getArticles(nextId?: string): Observable<Articles> {
+  getArticles(nextPage?: string): Observable<Articles> {
     var args = {};
-    if (nextId) {
+    if (nextPage) {
       args["params"] = {
-        next_id: nextId
+        next_page: nextPage
       };
     }
 
