@@ -5,7 +5,7 @@
         </div>
 
         <div style="overflow-anchor: none;">
-            <button *ngIf="nextPage" (click)="getArticles()" mat-raised-button>Next</button>
+            <button *ngIf="nextId" (click)="getArticles()" mat-raised-button>Next</button>
         </div>
     </ng-template>
     <ng-template #loading>
